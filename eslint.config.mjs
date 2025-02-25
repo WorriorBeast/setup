@@ -1,6 +1,7 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
 	{
 		languageOptions: {
@@ -8,6 +9,11 @@ export default [
 		},
 	},
 	pluginJs.configs.recommended,
+	{
+		linterOptions: {
+			reportUnusedDisableDirectives: 'error',
+		},
+	},
 	{
 		files: ['src/*.js'],
 		rules: {
